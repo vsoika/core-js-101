@@ -5,7 +5,7 @@
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object        *
  *                                                                                                *
  ************************************************************************************************ */
-
+/* eslint-disable */
 
 /**
  * Returns the rectagle object with width and height parameters and getArea() method

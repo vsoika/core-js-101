@@ -17,11 +17,5 @@ module.exports = {
   },
   rules: {
     "linebreak-style": 0,
-    "no-mixed-operators": 0,
-    "array-callback-return": 0,
-    "consistent-return": 0,
-    "no-return-assign": 0,
-    "no-param-reassign": 0
-
   },
 };

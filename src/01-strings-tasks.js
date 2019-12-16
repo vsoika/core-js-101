@@ -4,7 +4,7 @@
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String   *
  *                                                                                           *
  ******************************************************************************************* */
-
+/* eslint-disable */
 
 /**
  * Returns the result of concatenation of two strings.

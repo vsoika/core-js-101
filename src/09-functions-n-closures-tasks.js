@@ -7,7 +7,7 @@
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures                            *
  *                                                                                             *
  ********************************************************************************************* */
-
+/* eslint-disable */
 
 /**
  * Returns the functions composition of two specified functions f(x) and g(x).

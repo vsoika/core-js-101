@@ -5,7 +5,7 @@
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date     *
  *                                                                                           *
  ******************************************************************************************* */
-
+/* eslint-disable */
 
 /**
  * Parses a rfc2822 string date representation into date value

@@ -5,7 +5,7 @@
  *                                                                                                *
  ************************************************************************************************ */
 
-
+/* eslint-disable */
 /**
  * Return Promise object that is resolved with string value === 'Hooray!!! She said "Yes"!',
  * if boolean value === true is passed, resolved with string value === 'Oh no, she said "No".',
