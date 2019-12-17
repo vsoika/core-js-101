@@ -7,6 +7,7 @@
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures                            *
  *                                                                                             *
  ********************************************************************************************* */
+
 /* eslint-disable */
 
 /**
@@ -66,8 +67,23 @@ function getPowerFunction(exponent) {
  *   getPolynom(8)     => y = 8
  *   getPolynom()      => null
  */
-function getPolynom() {
-  throw new Error('Not implemented');
+function getPolynom(a, b, c) {
+  return function inner(x) {
+    let res = 0;
+    if (!a && !b && !c) {
+      res = null;
+    }
+    if (a && b && c) {
+      res = a * x ** 2 + b * x + c;
+    }
+    if (!c) {
+      res = a * x + b;
+    }
+    if (!b && !c) {
+      res = a;
+    }
+    return res;
+  };
 }
 
 
@@ -151,8 +167,11 @@ function logger(/* func, logFunc */) {
  *   partialUsingArguments(fn, 'a','b','c')('d') => 'abcd'
  *   partialUsingArguments(fn, 'a','b','c','d')() => 'abcd'
  */
-function partialUsingArguments(/* fn, ...args1 */) {
-  throw new Error('Not implemented');
+function partialUsingArguments(fn, ...args1) {
+  return function inner(...arg) {
+    const res = args1.concat(...arg);
+    return fn(...res);
+  }
 }
 
 
@@ -173,8 +192,11 @@ function partialUsingArguments(/* fn, ...args1 */) {
  *   getId4() => 7
  *   getId10() => 11
  */
-function getIdGeneratorFunction(/* startFrom */) {
-  throw new Error('Not implemented');
+function getIdGeneratorFunction(startFrom) {
+  let counter = startFrom;
+  return function inner() {
+    return counter++;
+  };
 }
 
 
