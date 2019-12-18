@@ -126,9 +126,10 @@ function repeatString(value, count) {
  *   'I like legends', 'end' => 'I like legs',
  *   'ABABAB','BA' => 'ABAB'
  */
-function removeFirstOccurrences(/* str, value */) {
-  // return str.split(value).join('');
-  throw new Error('Not implemented');
+function removeFirstOccurrences(str, value) {
+ const start = str.indexOf(value);
+ const deleteValue = str.slice(start, start + value.length);
+ return str.replace(deleteValue, '');
 }
 
 /**
@@ -203,8 +204,14 @@ function extractEmails(str) {
  *             '└──────────┘\n'
  *
  */
-function getRectangleString(/* width, height */) {
-  throw new Error('Not implemented');
+function getRectangleString(width, height) {
+  const line = '─'.repeat(width - 2);
+  const space = ' '.repeat(width - 2);
+  const top = `┌${line}┐\n`;
+  const middle = (`│${space}│\n`).repeat(height - 2);
+  const bottom = `└${line}┘\n`;
+
+  return top + middle + bottom;
 }
 
 
@@ -224,8 +231,16 @@ function getRectangleString(/* width, height */) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-function encodeToRot13(/* str */) {
-  throw new Error('Not implemented');
+function encodeToRot13(str) {
+ const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+ const rot = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
+ const res = [];
+
+ for(let i = 0; i < str.length; i++) {
+  const pos = alphabet.indexOf(str.charAt(i));
+  rot.includes(str.charAt(i)) ?  res.push(rot[pos]) : res.push(str.charAt(i));
+ }
+ return res.join('');
 }
 
 /**
