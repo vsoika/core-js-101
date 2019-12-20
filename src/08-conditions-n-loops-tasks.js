@@ -207,8 +207,11 @@ function isInsideCircle(circle, point) {
  *   'abracadabra'  => 'c'
  *   'entente' => null
  */
-function findFirstSingleChar(/* str */) {
-  throw new Error('Not implemented');
+function findFirstSingleChar(str) {
+  for (let i of str)
+    if (str.indexOf(i) === str.lastIndexOf(i))
+      return i;
+      return null;
 }
 
 
@@ -531,7 +534,7 @@ function evaluateTicTacToePosition(position) {
   if(position[2][0] === position[2][1] && position[2][0] === position[2][2]) {
     return position[2][0] ? position[2][0] : undefined;
   }
-  
+
   if(position[0][0] === position[0][1] && position[0][0] === position[0][2]) {
     return position[0][0] ? position[0][0] : undefined;
   }

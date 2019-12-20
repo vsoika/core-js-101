@@ -101,8 +101,11 @@ function getPolynom(a, b, c) {
  *   ...
  *   memoizer() => the same random number  (next run, returns the previous cached result)
  */
-function memoize(/* func */) {
-  throw new Error('Not implemented');
+function memoize(func) {
+  const res = func();
+  return function() {
+    return res;
+  }
 }
 
 
@@ -169,8 +172,7 @@ function logger(/* func, logFunc */) {
  */
 function partialUsingArguments(fn, ...args1) {
   return function inner(...arg) {
-    const res = args1.concat(...arg);
-    return fn(...res);
+    return fn(...args1, ...arg);
   }
 }
 
